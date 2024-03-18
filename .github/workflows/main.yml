@@ -1,0 +1,28 @@
+name: Deploy e publicacao
+
+on:
+    push:
+      branches:
+        - main
+jobs:
+    build:
+      runs-on: ubuntu-latest
+  
+      steps:
+        - uses: actions/checkout@v2
+  
+        - name: Instala
+          uses: actions/setup-dotnet@v3
+          with:
+            dotnet-version: '8.0.x'
+
+        - name: Build com .net
+          run: dotnet build --configuration Release
+
+        - name: Testar
+          run: dotnet test
+          
+        - name: Criar package
+          run: dotnet pack --configuration Release
+        - name: Publicar
+          run: dotnet nuget push "MoneyExtension/bin/MoneyExtension.1.0.0.nupkg" -k ${{secrets.NUGET_TOKEN}} -s https://api.nuget.org/v3/index.json

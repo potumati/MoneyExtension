@@ -4,6 +4,24 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <PackageId>MoneyExtensions</PackageId>
+    <Version>1.0.0</Version>
+    <License>MIT</License>
+    <Authors>Eduardo Poumati</Authors>
+    <Company>potumati.com</Company>
+    <PackageDescription>Converte decimal para int</PackageDescription>
+    <Description>Converte decimal para int</Description>
+    <RepositoryUrl>https://github.com/potumati/MoneyExtension</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/potumati/MoneyExtension</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>money;int;decimal;converter</PackageTags>
+    <Title>MoneyExtensions</Title>
+    <Summary>Converte decimal para int</Summary>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="..\Media\icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 </Project>
